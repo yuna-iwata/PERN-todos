@@ -10,8 +10,10 @@ create image
 create container
 
 ```
-docker run -p 5000:5000 -d --name node-app node-app-image
+docker run -v $(pwd):/app -p 5000:5000 -d --name node-app node-app-image
 ```
+
+(the $(pwd) gives the current path to the Dockerfile - only works for mac windows uses a different syntax)
 
 go to http://localhost:5000
 
