@@ -7,6 +7,10 @@ app.use(cors());
 app.use(express.json());
 
 //ROUTES//
+app.get("/", (req, res) => {
+  res.send("<h2>To do API</h2>");
+});
+
 app.post("/todos", async (req, res) => {
   try {
     const { description } = req.body;
